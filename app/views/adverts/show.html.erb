@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @advert.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @advert.category %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @advert.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  
+   <%= image_tag(@advert.image.url, width: "400px") if @advert.image && @advert.image.url  %>
+</p>
+
+<p>
+  <strong>Prix:</strong>
+  <%= @advert.prix %>
+</p>
+
+<p>
+  <strong>Localisation:</strong>
+  <%= @advert.localisation %>
+</p>
+
+<%= link_to 'Edit', edit_advert_path(@advert) %> |
+<%= link_to 'Back', adverts_path %>

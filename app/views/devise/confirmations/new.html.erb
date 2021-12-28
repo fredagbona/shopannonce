@@ -1,0 +1,30 @@
+<br><br><br> <br><br><br><br><br><br><br><br><br>
+
+<section class="bg-secondary">
+
+        <h2 class="text-white text-center">Renvoyer le mail de confirmation</h2>
+  <div class="row">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+
+        <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="col-auto pb-3">
+            <%= f.label :email, class:"form-label m-2" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class:"form-control-lg" %>
+          </div> 
+
+          <div class="actions">
+            <%= f.submit "Renvoyer le mail de confirmation", class:"btn btn-primary" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+    </div>
+    <div class="col-4">
+    </div>
+  </div>
+</section>
+<br><br><br>

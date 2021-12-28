@@ -1,0 +1,16 @@
+current directory: /home/prohackfr/workspace/stages/shopannonce/vendor/bundle/ruby/3.0.0/gems/unf_ext-0.0.8/ext/unf_ext
+/home/prohackfr/.rbenv/versions/3.0.2/bin/ruby -I /home/prohackfr/.rbenv/versions/3.0.2/lib/ruby/3.0.0 -r ./siteconf20211226-29779-cscjwq.rb extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /home/prohackfr/workspace/stages/shopannonce/vendor/bundle/ruby/3.0.0/gems/unf_ext-0.0.8/ext/unf_ext
+make DESTDIR\= clean
+
+current directory: /home/prohackfr/workspace/stages/shopannonce/vendor/bundle/ruby/3.0.0/gems/unf_ext-0.0.8/ext/unf_ext
+make DESTDIR\=
+compiling unf.cc
+linking shared-object unf_ext.so
+
+current directory: /home/prohackfr/workspace/stages/shopannonce/vendor/bundle/ruby/3.0.0/gems/unf_ext-0.0.8/ext/unf_ext
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20211226-29779-psnd6w

@@ -1,0 +1,96 @@
+
+
+
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <p>Loading...</p>
+      </div>
+    </div>
+    <div class="page">
+    
+      <!--Swiper-->
+      <section class="section swiper-container swiper-slider swiper-slider-1 context-dark" data-loop="true"  data-simulate-touch="false">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" data-slide-bg="https://res.cloudinary.com/hgjpsweyn/image/upload/v1640653093/background/showing-tablet-s-blank-screen_sxms3q.jpg">
+            <div class="swiper-slide-caption section-lg">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-9 col-lg-7 offset-md-1 offset-xxl-0">
+                      <form class="row g-3 ms-5">
+                         <div class="col-auto ">
+                          <label for="inputPassword2" class="visually-hidden">Titre de l'annonce...</label>
+                          <input type="password" class="form-control" id="inputPassword2" placeholder="Titre de l'annonce...">
+                        </div>
+                        <div class="col-auto">
+                          <label for="inputPassword2" class="visually-hidden">Password</label>
+                          <input type="password" class="form-control" id="inputPassword2" placeholder="Catégorie...">
+                        </div>
+                        <div class="col-auto">
+                          <button type="submit" class="btn btn-primary mb-3">Rechercher</button>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          
+        </div>
+        <!--Swiper Pagination-->
+        <div class="swiper-pagination-wrap">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-7 offset-md-1 offset-xxl-0">
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<div class="container-fluid bg-secondary">
+  <hr>
+  <h2 class="text-white text-center"> Annonces - Toutes nos annonces </h2>
+  <hr>
+</div>
+<br><br>
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+
+
+
+    <% @adverts.each do |advert| %>
+
+      <% if advert.valide %>
+        <div class="card mb-3">
+        <%= image_tag(advert.image.url, class: "card-img-top w-25") if advert.image && advert.image.url  %>
+          
+          <div class="card-body">
+            <h5 class="card-title"><%= advert.title %></h5>
+            <p class="card-text"><%= advert.description %></p>
+            <p class="card-text"> Prix : <%= advert.prix %> €</p>
+              <p class="card-text">Localisation : <%= advert.localisation %></p>
+              <p class="card-text text-center p-2 bg-primary"><%= advert.category %></p>
+            <p class="card-text"><small class="text-muted"><%= advert.updated_at %></small></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+ 

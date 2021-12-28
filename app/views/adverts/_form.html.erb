@@ -1,0 +1,62 @@
+
+            <div class="row g-3">
+                <%= form_with(model: advert) do |form| %>
+                  <% if advert.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(advert.errors.count, "error") %> prohibited this advert from being saved:</h2>
+
+                      <ul>
+                        <% advert.errors.each do |error| %>
+                          <li><%= error.full_message %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+
+                  <div class="col-md-6">
+                    <%= form.label :title, class:"form-label pb-3" %>
+                    <%= form.text_field :title, class:"form-control" %>
+                  </div><br>
+
+                  <div class="col-md-6">
+                    <%= form.label :description, class:"form-label" %>
+                    <%= form.text_area :description, class:"form-control" %>
+                  </div><br>
+
+                  <div class="col-md-6 mb-4">
+                  
+                    <%= form.label :category %>
+                    <%= form.select :category, Advert.categories.keys, class:"form-select-lg" %>
+                  </div>
+
+                  <div class="col-md-6 mb-4">
+                    <%= form.label :prix, class:"form-label pb-3" %>
+                    <%= form.number_field :prix, class:"form-control" %>
+                  </div>
+
+                  <div class="col-md-6">
+                    <%= form.label :localisation, class:"form-label pb-3" %>
+                    <%= form.text_field :localisation, class:"form-control" %>
+                  </div>
+
+                  <br>
+                  
+
+                  <div class="col-12">
+                    <p class="fs-5">Image</p>
+                      <%= image_tag(advert.image.url,  width: "400px") if advert.image && advert.image.url %>
+                            <br>   <br>
+                      <%= form.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "form-control-lg" %>
+                            
+                      <%= form.hidden_field :image_cache %>
+                  </div><br>
+
+                  
+
+
+                  <div class="col-12">
+                    <%= form.submit "Créer l'annonce", class:"btn btn-success" %>
+                  </div>
+                <% end %>
+            </div>
+  

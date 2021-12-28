@@ -1,0 +1,53 @@
+<br><br><br><br><br><br><br><br>
+
+
+<section class="">
+  <div class="row">
+      <div class="col-6">
+        <img src="https://res.cloudinary.com/hgjpsweyn/image/upload/v1640660058/background/4494183_nouxfo.jpg">
+      </div>
+      <div class="col-6">
+        <ul class="list-group">
+          <li class="list-group-item"><%= link_to 'Modifier mon profil', edit_user_registration_path(current_user) %></li>
+          <li class="list-group-item"><a href="#myads">Mes annonces</a></li>
+          <li class="list-group-item"><a href="#">Lorm ipsum</a></li>
+          <li class="list-group-item"><a href="#">Lorm ipsum</a></li>
+          <li class="list-group-item"><a href="#">Lorm ipsum</a></li>
+        </ul>
+      </div>
+  </div>
+</section>
+<br><br><br>
+
+<section id="myads" class="bg-light">
+  <h2 class="text-center">Mes annonces </h2>
+    <% @adverts.each do |advert| %>
+      <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+          <% if advert.valide %>
+            <div class="card mb-3">
+            <%= image_tag(advert.image.url, class: "card-img-top w-25") if advert.image && advert.image.url  %>
+              
+              <div class="card-body">
+                <h5 class="card-title"><%= advert.title %></h5>
+                <p class="card-text"><%= advert.description %></p>
+                <p class="card-text"> Prix : <%= advert.prix %> €</p>
+                  <p class="card-text">Localisation : <%= advert.localisation %></p>
+                  <p class="card-text text-center p-2 bg-primary"><%= advert.category %></p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+              <%= link_to 'Edit', edit_advert_path(advert), class:"btn btn-outline-primary text-center" %> 
+              <%= link_to 'Delete', advert, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger " %>
+             </div>
+          <% end %>
+        </div>
+        <div class="col-2">
+        </div>
+      
+      </div>
+     
+    <% end %>
+</section>
+<br><br>
