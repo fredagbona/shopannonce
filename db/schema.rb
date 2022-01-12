@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_26_093739) do
+ActiveRecord::Schema.define(version: 2022_01_10_211157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 2021_12_26_093739) do
     t.integer "category"
     t.text "description"
     t.string "image"
+    t.string "image2"
+    t.string "image3"
+    t.string "image4"
     t.integer "prix"
     t.string "localisation"
     t.boolean "valide", default: false
@@ -27,6 +30,12 @@ ActiveRecord::Schema.define(version: 2021_12_26_093739) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_adverts_on_user_id"
+  end
+
+  create_table "newsletters", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

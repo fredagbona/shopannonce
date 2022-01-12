@@ -16,9 +16,28 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>Image Principale:</strong>
   
    <%= image_tag(@advert.image.url, width: "400px") if @advert.image && @advert.image.url  %>
+</p>
+
+<p>
+  <strong>Image 2:</strong>
+  
+   <%= image_tag(@advert.image2.url, width: "400px") if @advert.image2 && @advert.image2.url  %>
+</p>
+
+<p>
+  <strong>Image 3:</strong>
+  
+   <%= image_tag(@advert.image3.url, width: "400px") if @advert.image3 && @advert.image3.url  %>
+</p>
+
+<p>
+  <strong>Image 
+  :</strong>
+  
+   <%= image_tag(@advert.image4.url, width: "400px") if @advert.image4 && @advert.image4.url  %>
 </p>
 
 <p>

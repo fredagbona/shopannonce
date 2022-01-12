@@ -26,8 +26,8 @@
                   <div class="col-md-6 mb-4">
                   
                     <%= form.label :category %>
-                    <%= form.select :category, Advert.categories.keys, class:"form-select-lg" %>
-                  </div>
+                    <%= form.select :category, Advert.categories.keys, class:"form-select" %>
+                  </div><br><br><br>
 
                   <div class="col-md-6 mb-4">
                     <%= form.label :prix, class:"form-label pb-3" %>
@@ -43,13 +43,46 @@
                   
 
                   <div class="col-12">
-                    <p class="fs-5">Image</p>
+                    <p class="fs-5">Image principale </p>
                       <%= image_tag(advert.image.url,  width: "400px") if advert.image && advert.image.url %>
                             <br>   <br>
                       <%= form.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "form-control-lg" %>
                             
                       <%= form.hidden_field :image_cache %>
                   </div><br>
+
+                   <p class="fs-5">Ajoutez ici jusqu'à trois images de plus pour présenter plus votre annonce <span class="text-danger">*</span> </p><br>
+
+
+                  <div class="col-12">
+                    <p class="fs-5">Image 2 </p>
+                      <%= image_tag(advert.image2.url,  width: "400px") if advert.image2 && advert.image2.url %>
+                            <br>   <br>
+                      <%= form.file_field :image2, accept: 'image/jpeg,image/gif,image/png', class: "form-control-lg" %>
+                            
+                      <%= form.hidden_field :image_cache %>
+                  </div><br>
+
+
+                  <div class="col-12">
+                    <p class="fs-5">Image 3 </p>
+                      <%= image_tag(advert.image3.url,  width: "400px") if advert.image3 && advert.image3.url %>
+                            <br>   <br>
+                      <%= form.file_field :image3, accept: 'image/jpeg,image/gif,image/png', class: "form-control-lg" %>
+                            
+                      <%= form.hidden_field :image_cache %>
+                  </div><br>
+
+
+                  <div class="col-12">
+                    <p class="fs-5">Image 4 </p>
+                      <%= image_tag(advert.image4.url,  width: "400px") if advert.image4 && advert.image4.url %>
+                            <br>   <br>
+                      <%= form.file_field :image4, accept: 'image/jpeg,image/gif,image/png', class: "form-control-lg" %>
+                            
+                      <%= form.hidden_field :image_cache %>
+                  </div><br>
+
 
                   
 

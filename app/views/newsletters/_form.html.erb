@@ -1,0 +1,14 @@
+ <%= form_for (Newsletter.new) do |f| %>
+ 
+                     <%= f.text_field :email, class: 'input-text required-entry validate-email', placeholder:'Email' %><br><br>
+                      <%= f.submit "Subscribe", style:"
+                        background-color: #ED6663;
+                        color : #fff;
+                    font-size: 20px;
+                    text-align: center;
+                    padding: 30px 100px;
+                    border-radius: 50px;
+                 
+                    "%>
+   
+<% end %>

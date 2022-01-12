@@ -1,7 +1,7 @@
 
 
 
-<br><br><br> <br><br><br><br><br><br><br><br><br>
+<!-- 
 
 <section class="bg-secondary">
 
@@ -40,12 +40,137 @@
   </div>
 </section>
 <br><br><br>
+-->
 
 
 
 
+<div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+     <div class="page-title">
+     <h2> Changez votre mot de passe</h2>
+  </div>
+        </div>
+        <!--col-xs-12-->
+      </div>
+      <!--row-->
+    </div>
+    <!--container-->
+  </div>
+    
+       
+<!-- BEGIN Main Container -->  
+          
+       <div class="main-container col1-layout wow bounceInUp animated animated" style="visibility: visible;">     
+              
+	       <div class="main">                     
+                            <div class="account-login container">
+  <!--page-title-->
+
+        
+        <fieldset class="col2-set">
+            <div class="col-1 new-users"> 
+                  <strong>New Customers</strong>    
+                <div class="content">
+       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+                    
+                    <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+                    <br>
+                     <div class="buttons-set">
+                            <%= render "devise/shared/error_messages", resource: resource %> 
+                             <%= f.hidden_field :reset_password_token %>
+                             <br><br>
+                      </div>
+                </div>
+            </div>
+            <div class="col-2 registered-users">
+             <strong>Registered Customers</strong>             
+                <div class="content">
+                    
+                    <p>Change your password here</p>
+                    <ul class="form-list">
+                         
+                        <li>
+                            <label for="pass">New Password<em class="required">*</em></label>
+                            <div class="input-box">
+                              <% if @minimum_password_length %>
+                                <em class="text-white">(<%= @minimum_password_length %> characters minimum)</em><br />
+                              <% end %>
+                              <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class:"input-text" %>
+                            </div>
+                        </li>
+                         <li>
+                            <label for="pass">New Password confirmation<em class="required">*</em></label>
+                            <div class="input-box">
+                                <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input-text" %>
+                            </div>
+                        </li>
+                                                                    </ul>
+                     <div class="buttons-set">
+                                <%= f.submit "Changer mon mot de passe", class:"btn btn-outline-sucess" %>
+                    </div> 
+      <% end %>
+
+                <br><br>
 
 
-<h2>Changer votre mot de passe</h2>
+
+                    
+
+                      <div class="forgot-word">
+                             <%= render "devise/shared/links" %>
+                      </div>
+                 <!--buttons-set-->
+                  </div> <!--content-->                               
+            </div> <!--col-2 registered-users-->
+                   </fieldset> <!--col2-set-->
+   
+</div> <!--account-login-->
+         
+	       </div><!--main-container-->
+          
+          </div> <!--col1-layout-->
+          
+
+  
+ 
+   <div class="our-features-box">
+     <div class="container">
+     <div class="row">
+      <ul>
+        <li>
+          <div class="feature-box">
+            <div class="icon-truck"></div>
+            <div class="content">Free shipping on order over $99</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-box">
+            <div class="icon-support"></div>
+            <div class="content">Have a question?<br>
+              +1 800 789 000</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-box">
+            <div class="icon-money"></div>
+            <div class="content">100% Money back guarantee</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-box">
+            <div class="icon-return"></div>
+            <div class="content">30 days return service</div>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+    </div>
+  </div>
+  <!-- For version 1,2,3,4,6 -->
+  
 
 

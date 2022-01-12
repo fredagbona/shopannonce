@@ -1,5 +1,8 @@
 class Advert < ApplicationRecord
     mount_uploader :image, AvatarUploader
+    mount_uploader :image2, AvatarUploader
+    mount_uploader :image3, AvatarUploader
+    mount_uploader :image4, AvatarUploader
 
     belongs_to :user, optional: true
 
