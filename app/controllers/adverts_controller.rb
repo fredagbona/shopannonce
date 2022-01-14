@@ -5,6 +5,7 @@ class AdvertsController < ApplicationController
   # GET /adverts or /adverts.json
   def index
     @adverts = Advert.all
+    @adverte = Advert.all.order(created_at: :desc).limit(4)
   end
 
   # GET /adverts/1 or /adverts/1.json

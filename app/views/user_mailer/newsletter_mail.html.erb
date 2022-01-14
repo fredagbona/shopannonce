@@ -1,0 +1,29 @@
+<p> Dear Followers: </p>
+<p> Those are the lastest entries to our ads. We invite you to read and share everything we did on this week. </p>
+
+<br/>
+<table>
+<% @advert.each do |advert| %>
+  <%#= link_to blog_url(advert) do %>
+      <tr style="display:flex; float:left; clear:both;">
+        <td style="display:flex; float:left; clear:both; height: 80px; width: 100px;">
+          <% if advert.image.present? %>
+            <%= image_tag advert.image.fullsize.url, class:"principal-home-image-slider" %>
+          <%# else %>
+            <%#= image_tag 'http://your_site_project.com' + advert.cover_video, class:"principal-home-image-slider" %>
+            <%#= raw(video_embed(advert.cover_video)) %>
+          <% end %>
+        </td>
+        <td>
+          <h3>
+            <%= link_to advert.title, :controller => "blog", :action => "show", :only_path => false, :id => advert.id %>
+          </h3>
+          <p><%= advert.title %></p>
+        </td>
+        <td style="display:flex; float:left; clear:both;">
+           
+        </td>
+      </tr>
+  <%# end %>
+<% end %>
+</table>

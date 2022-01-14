@@ -11,6 +11,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.integer :phone_number
       t.string :address
       t.string :avatar
+      t.integer :post_code
+      t.string :pays
+      
 
       ## Recoverable
       t.string   :reset_password_token

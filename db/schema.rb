@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2022_01_10_211157) do
     t.integer "phone_number"
     t.string "address"
     t.string "avatar"
+    t.integer "post_code"
+    t.string "pays"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

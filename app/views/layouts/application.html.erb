@@ -20,9 +20,93 @@
        
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    
+    <style>
+      
+     
+      /* Fixez le bouton sur le côté gauche de la page the button on the left side of the page */
+     
+      /* Stylez et fixez le bouton sur la page */
+    
+      /* Positionnez la forme Popup */
+      .login-popup {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      }
+      /* Masquez la forme Popup */
+      .form-popup {
+      display: none;
+      position: fixed;
+      /*left: 45%;
+      top:5%;
+      transform: translate(-45%,5%);*/
+      width: 100px;
+      border: 2px solid #666;
+      z-index: 9;
+      }
+      /* Styles pour le conteneur de la forme */
+      .form-container {
+      max-width: 300px;
+      padding: 20px;
+      background-color: orange;
+      }
+      /* Largeur complète pour les champs de saisie */
+      
+      /* Stylez le bouton de connexion */
+      .form-container .btn {
+      background-color: #8ebf42;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+      }
+      /* Stylez le bouton pour annuler */
+      .form-container .cancel {
+      background-color: #cc0000;
+      }
+      /* Planez les effets pour les boutons */
+      .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+      }
+    </style>
   </head>
 
   <body>
+        <% if flash.present? %>
+                
+              
+
+                    <div class="login-popup">
+                    <div class="form-popup" id="popupForm">
+                        <div  class="form-container">
+                        
+                                  <% flash.each do |key, value| %>
+                                 <%= content_tag(:div, value, class: "#{key}") %>
+                                <% end %>
+                        <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
+                        </div>
+                    </div>
+                    </div>
+                    <script>
+
+                        document.getElementById("popupForm").style.display="block";
+                    
+                    
+                    function closeForm() {
+                        document.getElementById("popupForm").style.display="none";
+                    }
+                    </script>
+                
+                  
+    
+                
+            <% end %>
   
      <% if user_signed_in? %>
          <%= render "partials/head"%>
@@ -132,3 +216,6 @@
 
   </body>
 </html>
+
+
+  

@@ -1,14 +1,13 @@
 class NewslettersController < ApplicationController
-  skip_before_action :authenticate_user!
   before_action :set_newsletter, only: [:destroy]
 
   def create
     @newsletter = Newsletter.create(newsletter_params)
     if @newsletter.save 
-      format.html { redirect_to homes_index_path, notice: "Thanks for your subscribing" }
+     redirect_to homes_index_path, notice: "Thanks for your subscribing" 
      
     else
-      format.html { render :new, status: :unprocessable_entity }
+      redirect_to homes_index_path, notice: "Error !!!" 
     end
   end
 

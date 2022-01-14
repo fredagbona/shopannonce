@@ -1,14 +1,149 @@
+ <!-- 
  <%= form_for (Newsletter.new) do |f| %>
  
                      <%= f.text_field :email, class: 'input-text required-entry validate-email', placeholder:'Email' %><br><br>
-                      <%= f.submit "Subscribe", style:"
-                        background-color: #ED6663;
-                        color : #fff;
-                    font-size: 20px;
-                    text-align: center;
-                    padding: 30px 100px;
-                    border-radius: 50px;
-                 
+                      <%= f.submit "Subscribe", class: "button submit
                     "%>
    
-<% end %>
+<% end %> -->
+
+
+
+
+
+<div class="newsletter_img">
+
+    <div class="email-form">
+        <h3>Newsletter Sign up</h3>
+        
+        
+        
+        </h4>
+     <div class="newsletter-form">
+      <%= form_for (Newsletter.new) do |f| %>
+ 
+        <div class="input-box">
+         <%= f.text_field :email, class: 'form-control', placeholder:'Email' %><br><br>
+                      <%= f.submit "Subscribe", class: "button",style: "background-color: #ed6663; "%>
+                    <!--
+           <input type="text" name="email" id="newsletter2" title="Sign up for our newsletter" placeholder="Enter your email address" class="input-text required-entry validate-email">        
+           <button type="submit" title="Subscribe" class="button subscribe"><span>Subscribe</span></button> -->
+         
+        </div> <!--input-box-->
+      <% end %>
+     </div> <!--newsletter-form-->
+        
+    </div>
+
+
+
+</div> <!--newsletter-->
+
+  </div> <!--newsletter-sign-box-->
+</div>
+<!--
+<script>
+        jQuery(document).ready(function(){
+            jQuery('#thm-rev-slider').show().revolution({
+                dottedOverlay: 'none',
+                delay: 10000,
+                startwidth: 0,
+                startheight:750,
+
+                hideThumbs: 200,
+                thumbWidth: 200,
+                thumbHeight: 50,
+                thumbAmount: 2,
+
+                navigationType: 'thumb',
+                navigationArrows: 'solo',
+                navigationStyle: 'round',
+
+                touchenabled: 'on',
+                onHoverStop: 'on',
+                
+                swipe_velocity: 0.7,
+                swipe_min_touches: 1,
+                swipe_max_touches: 1,
+                drag_block_vertical: false,
+            
+                spinner: 'spinner0',
+                keyboardNavigation: 'off',
+
+                navigationHAlign: 'center',
+                navigationVAlign: 'bottom',
+                navigationHOffset: 0,
+                navigationVOffset: 20,
+
+                soloArrowLeftHalign: 'left',
+                soloArrowLeftValign: 'center',
+                soloArrowLeftHOffset: 20,
+                soloArrowLeftVOffset: 0,
+
+                soloArrowRightHalign: 'right',
+                soloArrowRightValign: 'center',
+                soloArrowRightHOffset: 20,
+                soloArrowRightVOffset: 0,
+
+                shadow: 0,
+                fullWidth: 'on',
+                fullScreen: 'on',
+
+                stopLoop: 'off',
+                stopAfterLoops: -1,
+                stopAtSlide: -1,
+
+                shuffle: 'off',
+
+                autoHeight: 'on',
+                forceFullWidth: 'off',
+                fullScreenAlignForce: 'off',
+                minFullScreenHeight: 0,
+                hideNavDelayOnMobile: 1500,
+            
+                hideThumbsOnMobile: 'off',
+                hideBulletsOnMobile: 'off',
+                hideArrowsOnMobile: 'off',
+                hideThumbsUnderResolution: 0,
+
+                hideSliderAtLimit: 0,
+                hideCaptionAtLimit: 0,
+                hideAllCaptionAtLilmit: 0,
+                startWithSlide: 0,
+                fullScreenOffsetContainer: ''
+            });
+        });
+        </script> 
+<script>
+    function HideMe()
+    {
+        jQuery('.popup1').hide();
+        jQuery('#fade').hide();
+    }
+</script> -->
+<!-- Hot Deals Timer 1-->
+<!--
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script> -->
+<!-- 
+<script>
+      var dthen1 = new Date("12/25/17 11:59:00 PM");
+      start = "08/04/15 03:02:11 AM";
+      start_date = Date.parse(start);
+      var dnow1 = new Date(start_date);
+      if (CountStepper > 0)
+      ddiff = new Date((dnow1) - (dthen1));
+      else
+      ddiff = new Date((dthen1) - (dnow1));
+      gsecs1 = Math.floor(ddiff.valueOf() / 1000);
+      
+      var iid1 = "countbox_1";
+      CountBack_slider(gsecs1, "countbox_1", 1);
+    </script> -->
