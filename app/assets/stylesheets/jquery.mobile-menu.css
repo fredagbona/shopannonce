@@ -314,7 +314,7 @@ html {
 
 .mm-toggle .icon-align-justify:before {vertical-align:middle!important; color:#80b435}
 
- @media (max-width: 767px) {
+@media (max-width: 767px) {
 .mm-toggle {
 	display: block; 
 }
@@ -328,7 +328,7 @@ margin-left: 6px;
   font-weight: 600;
 }
 }
- @media (max-width: 767px) {
+@media (max-width: 767px) {
  .mm-toggle .mm-label {
 margin-left: 6px;
   font-size: 14px;
@@ -338,4 +338,4 @@ margin-left: 6px;
   display:none
 }
 }
-}
+

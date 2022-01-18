@@ -291,7 +291,7 @@ Text Domain:  Marazzo
 	border-width: 0px;
 	border-radius: 0px 0px 0px 0px;
 }
- @media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (min-width: 480px) and (max-width: 767px) {
 .tp-button {
 	padding: 4px 8px 3px;
 	line-height: 25px !important;
@@ -301,7 +301,7 @@ Text Domain:  Marazzo
 a.tp-button {
 }
 }
- @media only screen and (min-width: 0px) and (max-width: 479px) {
+@media only screen and (min-width: 0px) and (max-width: 479px) {
 .tp-button {
 	padding: 2px 5px 2px;
 	line-height: 20px !important;
@@ -576,7 +576,7 @@ a.tp-button {
 #thmg-slider-slideshow .col-lg-4 {
 	padding: 0px;
 }
- @media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (min-width: 480px) and (max-width: 767px) {
 
 #thmg-slider-slideshow .container {
 	width: 100%;
@@ -587,7 +587,7 @@ a.tp-button {
 	display: none !important;
 }
 
- @media only screen and (min-width: 0px) and (max-width: 479px) {
+@media only screen and (min-width: 0px) and (max-width: 479px) {
 .tp-button {
 	padding: 2px 5px 2px;
 	line-height: 20px !important;
@@ -623,14 +623,14 @@ a.tp-button {
 	display: none !important;
 }
 
- @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
 #thmg-slider-slideshow .container {
 	width: 100%;
 }
 
 
 }
- @media only screen and (min-width: 992px) and (max-width: 1200px) {
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
 #thmg-slider-slideshow .container {
 	width: 100%;
 }
@@ -638,4 +638,6 @@ a.tp-button {
 }
 
 
-.tp-bannertimer {background:rgba(255,255,255,0.5); height:7px; margin-top:-8px; position: relative; z-index:100; display:none}
+.tp-bannertimer{
+	background:rgba(255,255,255,0.5); height:7px; margin-top:-8px; position: relative; z-index:100; display:none ;
+}
