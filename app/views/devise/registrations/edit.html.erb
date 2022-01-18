@@ -1,4 +1,4 @@
-<br><br><br><br><br>
+<!--
 <div class="bg bg-secondary">
   <h2 class="text-white text-center" >Modifier mon compte <%= resource_name.to_s.humanize %></h2>
 </div>
@@ -58,4 +58,212 @@
   </div>
 </div>
 
+-->
 
+ <style>
+      .frame {
+      width: 450px;
+      height: 350px;
+      border: 3px solid #ccc;
+      background: #eee; 
+      margin: auto;
+      padding: 15px 25px;
+      }
+      .imagepro {
+      width: 50%;
+      height: 50%;
+      }
+</style>
+
+  <div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+     <div class="page-title">
+     <h2> Edit my Account</h2>
+  </div>
+        </div>
+        <!--col-xs-12-->
+      </div>
+      <!--row-->
+    </div>
+    <!--container-->
+  </div>
+    
+       
+<!-- BEGIN Main Container -->  
+          
+       <div class="main-container col1-layout wow bounceInUp animated animated" style="visibility: visible;">     
+              
+	       <div class="main">                     
+                            <div class="account-login container">
+  <!--page-title-->
+
+        
+        <fieldset class="col2-set">
+            <div class="col-1 new-users"> 
+                  <strong></strong>    
+                <div class="content">
+       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                    
+                     <div class=" col-auto">
+                        <%= image_tag(@user.avatar.url, class: "imagepro") if @user.avatar && @user.avatar.url  %>
+                    </div> <br> <br><br> <br>
+                    <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+                    <br> 
+                   
+                     <div class="buttons-set">
+                            <%= render "devise/shared/error_messages", resource: resource %> <br><br>
+                      </div>
+                </div>
+            </div>
+            <div class="col-2 registered-users">
+             <strong>Informations</strong>             
+                <div class="content">
+                    
+                    <p>If you don't have an account with us, please create here.</p>
+                    <ul class="form-list">
+                          <li>
+                             <label for="name">Name<em class="required">*</em></label>
+                            <div class="input-box">
+                              
+                               <%= f.text_field :name, class:"input-text" %>
+                            </div>
+                        </li>
+                        <li>
+                             <label for="email">Email Address<em class="required">*</em></label>
+                            <div class="input-box">
+                              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-text" %>
+                            </div>
+                        </li>
+                         <li>
+                             <label for="name">Address<em class="required">*</em></label>
+                            <div class="input-box">
+                              
+                               <%= f.text_field :address, class:"input-text" %>
+                            </div>
+                        </li>
+                         <li>
+                             <label for="name">Post code<em class="required">*</em></label>
+                            <div class="input-box">
+                              
+                               <%= f.text_field :post_code, class:"input-text" %>
+                            </div>
+                        </li>
+                         <li>
+                             <label for="name">Country<em class="required">*</em></label>
+                            <div class="input-box">
+                              
+                               <%= f.text_field :pays, class:"input-text" %>
+                            </div>
+                        </li>
+                         <li>
+                             <label for="name">Phone Number<em class="required">*</em></label>
+                            <div class="input-box">
+                              
+                               <%= f.text_field :phone_number, class:"input-text" %>
+                            </div>
+                        </li>
+                        <li>
+                           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                             <% end %>
+
+                        </li>
+                        <li>
+                            <label for="pass">Password(leave blank if you don't want to change it)</label>
+                            <div class="input-box">
+                             <%= f.password_field :password, autocomplete: "new-password", class:"input-text" %>
+                           <% if @minimum_password_length %>
+                            <br />
+                             <em><%= @minimum_password_length %> characters minimum</em>
+                          <% end %><em class="required">*</em>
+                            </div>
+                        </li>
+                         <li>
+                            <label for="pass">New Password<em class="required">*</em></label>
+                            <div class="input-box">
+                                <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"input-text" %>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="pass"> Current Password(we need your current password to confirm your changes)<em class="required">*</em></label>
+                            <div class="input-box">
+                             <%= f.password_field :current_password, autocomplete: "current-password",class:"input-text" %>
+                            </div>
+                        </li>
+                        <li>
+                              
+                            <div>
+                              <label>Avatar</label>
+                                   <%= image_tag(@user.avatar.url, width: "50px") if @user.avatar && @user.avatar.url %><br><br>   
+                                  <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', class: "form-control" %>
+                                  <%= f.hidden_field :avatar_cache %>
+                            </div>
+                        </li><br><br>
+                                                                    </ul>
+                     <div class="buttons-set">
+                                   <%= f.submit "Update Informations", class:"btn" %>
+                    </div> 
+      <% end %>
+
+                <br><br>
+
+                      <h4>Do you want leave?</h4>
+
+                        <%= button_to "Delete my account ", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn" %>
+
+                    
+
+                      <div class="forgot-word">
+                           
+                      </div>
+                 <!--buttons-set-->
+                  </div> <!--content-->                               
+            </div> <!--col-2 registered-users-->
+                   </fieldset> <!--col2-set-->
+   
+</div> <!--account-login-->
+         
+	       </div><!--main-container-->
+          
+          </div> <!--col1-layout-->
+          
+
+
+   <div class="our-features-box">
+     <div class="container">
+     <div class="row">
+      <ul>
+        <li>
+          <div class="feature-box">
+            <div class="icon-truck"></div>
+            <div class="content">Free shipping on order over $99</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-box">
+            <div class="icon-support"></div>
+            <div class="content">Have a question?<br>
+              +1 800 789 000</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-box">
+            <div class="icon-money"></div>
+            <div class="content">100% Money back guarantee</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-box">
+            <div class="icon-return"></div>
+            <div class="content">30 days return service</div>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+    </div>
+  </div>
+  <!-- For version 1,2,3,4,6 -->
+  

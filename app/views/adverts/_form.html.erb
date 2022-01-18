@@ -1,4 +1,4 @@
-
+<!--
             <div class="row g-3">
                 <%= form_with(model: advert) do |form| %>
                   <% if advert.errors.any? %>
@@ -58,6 +58,7 @@
                     <p class="fs-5">Image 2 </p>
                       <%= image_tag(advert.image2.url,  width: "400px") if advert.image2 && advert.image2.url %>
                             <br>   <br>
+                     
                       <%= form.file_field :image2, accept: 'image/jpeg,image/gif,image/png', class: "form-control-lg" %>
                             
                       <%= form.hidden_field :image_cache %>
@@ -92,4 +93,189 @@
                   </div>
                 <% end %>
             </div>
+  -->
+
+  <div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+     <div class="page-title">
+     <h2>Create your Advert</h2>
+  </div>
+        </div>
+        <!--col-xs-12-->
+      </div>
+      <!--row-->
+    </div>
+    <!--container-->
+  </div>
+    
+       
+<!-- BEGIN Main Container -->  
+          
+       <div class="main-container col1-layout wow bounceInUp animated animated" style="visibility: visible;">     
+              
+	       <div class="main">                     
+                            <div class="account-login container">
+  <!--page-title-->
+
+        <div id="login-form">
+        
+        <fieldset class="col2-set">
+            <div class="col-1 new-users"> 
+                  <strong>New Advert</strong>    
+                <div class="content">
+                  <%= form_with(model: advert) do |form| %>
+                   
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Parturient montes nascetur ridiculus mus mauris. Sit amet mattis vulputate enim nulla aliquet porttitor. Sit amet dictum sit amet justo. Nam at lectus urna duis. Et netus et malesuada fames ac turpis. Aliquet nec ullamcorper sit amet risus nullam eget. Aenean et tortor at risus viverra adipiscing at in tellus. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Odio morbi quis commodo odio. Urna id volutpat lacus laoreet non curabitur gravida. Accumsan sit amet nulla facilisi morbi tempus iaculis urna. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Lorem ipsum dolor sit amet consectetur adipiscing elit. Mi ipsum faucibus vitae aliquet nec ullamcorper sit. A diam sollicitudin tempor id. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Magna fermentum iaculis eu non diam. Fermentum odio eu feugiat pretium nibh.</p>
+                    <br>
+                     <div class="buttons-set">
+                      <% if advert.errors.any? %>
+                              <div id="error_explanation">
+                          <h2><%= pluralize(advert.errors.count, "error") %> prohibited this advert from being saved:</h2>
+
+                          <ul>
+                            <% advert.errors.each do |error| %>
+                              <li><%= error.full_message %></li>
+                            <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2 registered-users">
+             <strong>CREATED YOUR AVERT</strong>             
+                <div class="content">
+                  
+                    <ul class="form-list">
+                        <li>
+                             <label for="title">Title<em class="required">*</em></label>
+                            <div class="input-box">
+                           
+                                  <%= form.text_field :title, class:"input-text" %>
+                            </div>
+                        </li><br>
+                        <li>
+                            <label for="description">Description(Please describe your advert here)<em class="required">*</em></label>
+                            <div class="input-box">
+                                <%= form.text_area :description, class:"form-control" %>
+                            </div>
+                        </li><br>
+                          <li>
+                            <label for="category">Category(Please select your advert's category)<em class="required">*</em></label>
+                            <div class="input-box">
+                                <%= form.select :category, Advert.categories.keys, class:"input-text" %>
+                            </div>
+                         </li><br>
+                          <li>
+                            <label for="localisation">Localisation(Please put your advert's localisation)<em class="required">*</em></label>
+                            <div class="input-box">
+                               <%= form.text_field :localisation, class:"input-text" %>
+                            </div>
+                         </li><br>
+                          <li>
+                            <label for="price">Price(Please choose your advert's price, put 0 if it's free)<em class="required">*</em></label>
+                            <div class="input-box">
+                               <%= form.number_field :prix, class:"input-text" %>
+                            </div>
+                         </li><br>
+                         <hr>
+                          <li>
+                            <label for="image">Principal Image(Please choose your advert's principal image)<em class="required">*</em></label>
+                            <div class="input-box">
+                               <%= image_tag(advert.image.url,  width: "400px") if advert.image && advert.image.url %>
+                            <br>  
+                               <%= form.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "input-text" %>
+                                 <%= form.hidden_field :image_cache %>
+                            </div>
+                         </li>
+                         <li>
+                            <label for="image">Second Image <em class="required">*</em></label>
+                            <div class="input-box">
+                               <%= image_tag(advert.image2.url,  width: "400px") if advert.image2 && advert.image2.url %>
+                            <br>  
+                               <%= form.file_field :image2, accept: 'image/jpeg,image/gif,image/png', class: "input-text" %>
+                                 <%= form.hidden_field :image_cache %>
+                            </div>
+                         </li>
+                          <li>
+                            <label for="image">Third Image <em class="required">*</em></label>
+                            <div class="input-box">
+                               <%= image_tag(advert.image3.url,  width: "400px") if advert.image3 && advert.image3.url %>
+                            <br>  
+                               <%= form.file_field :image3, accept: 'image/jpeg,image/gif,image/png', class: "input-text" %>
+                                 <%= form.hidden_field :image_cache %>
+                            </div>
+                         </li>
+                          <li>
+                            <label for="image">Second Image <em class="required">*</em></label>
+                            <div class="input-box">
+                               <%= image_tag(advert.image4.url,  width: "400px") if advert.image4 && advert.image4.url %>
+                            <br>  
+                               <%= form.file_field :image4, accept: 'image/jpeg,image/gif,image/png', class: "input-text" %>
+                                 <%= form.hidden_field :image_cache %>
+                            </div>
+                         </li>
+                                                                    </ul>
+                   
+</div>
+
+
+
+
+
+                     <div class="buttons-set">
+                         <%= form.submit "Créer l'annonce", class:"btn" %>
+                 </div>
+         <% end %> <!--buttons-set-->
+                  </div> <!--content-->                               
+            </div> <!--col-2 registered-users-->
+                   </fieldset> <!--col2-set-->
+    </div>
+   
+</div> <!--account-login-->
+         
+	       </div><!--main-container-->
+          
+          </div> <!--col1-layout-->
+          
+
+  
+ 
+   <div class="our-features-box">
+     <div class="container">
+     <div class="row">
+      <ul>
+        <li>
+          <div class="feature-box">
+            <div class="icon-truck"></div>
+            <div class="content">Free shipping on order over $99</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-box">
+            <div class="icon-support"></div>
+            <div class="content">Have a question?<br>
+              +1 800 789 000</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-box">
+            <div class="icon-money"></div>
+            <div class="content">100% Money back guarantee</div>
+          </div>
+        </li>
+        <li>
+          <div class="feature-box">
+            <div class="icon-return"></div>
+            <div class="content">30 days return service</div>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+    </div>
+  </div>
+  <!-- For version 1,2,3,4,6 -->
   

@@ -1,198 +1,133 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @advert.title %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @advert.category %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @advert.description %>
-</p>
-
-<p>
-  <strong>Image Principale:</strong>
+    
+<div id="page">
   
-   <%= image_tag(@advert.image.url, width: "400px") if @advert.image && @advert.image.url  %>
-</p>
-
-<p>
-  <strong>Image 2:</strong>
-  
-   <%= image_tag(@advert.image2.url, width: "400px") if @advert.image2 && @advert.image2.url  %>
-</p>
-
-<p>
-  <strong>Image 3:</strong>
-  
-   <%= image_tag(@advert.image3.url, width: "400px") if @advert.image3 && @advert.image3.url  %>
-</p>
-
-<p>
-  <strong>Image 
-  :</strong>
-  
-   <%= image_tag(@advert.image4.url, width: "400px") if @advert.image4 && @advert.image4.url  %>
-</p>
-
-<p>
-  <strong>Prix:</strong>
-  <%= @advert.prix %>
-</p>
-
-<p>
-  <strong>Localisation:</strong>
-  <%= @advert.localisation %>
-</p>
-
-<%= link_to 'Edit', edit_advert_path(@advert) %> |
-<%= link_to 'Back', adverts_path %>
-
-
-  <div id="page">
-  
-<div class="page-heading">
+  <div class="page-heading">
+  <div class="breadcrumbs">
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-       <div class="page-title"><h2>Blog</h2></div>
+          <ul>
+            <li class="home"> <a href="/homes/index" title="Go to Home Page">Home</a> <span>&rsaquo; </span> </li>
+            <li class="category1601"> <strong>View Advert</strong> </li>
+          </ul>
         </div>
-        <!--col-xs-12-->
+        <!--col-xs-12--> 
       </div>
-      <!--row-->
+      <!--row--> 
     </div>
-    <!--container-->
-  </div>    	
-<!-- BEGIN Main Container -->  
-       <div class="main-container col2-left-layout">
-	       <div class="main container"> 
-	        <div class="row">                          
- <div class="col-left sidebar col-sm-3 blog-side">
-        <div id="secondary" class="widget_wrapper13" role="complementary">
-          <div id="recent-posts-4" class="popular-posts widget widget__sidebar wow bounceInUp animated animated" style="visibility: visible;">
-            <h2 class="widget-title">Most Popular Posts</h2>
-            <div class="widget-content">
-              <ul class="posts-list unstyled clearfix">
-                    <% @adverte.each do |advert| %>
-                 <% if advert.valide %>
-                  <li>
-                    <figure class="featured-thumb"><%= image_tag(advert.image.url, class: "card-img-top w-25") if advert.image && advert.image.url  %> </figure>
-                            <!--featured-thumb-->
-                            <div class="content-info">
-                              <h4> <%= link_to '#{advert.title}', advert %></h4>
-                              <p class="post-meta">
-                                <time class="entry-date"><%= advert.updated_at %>.</time>
-                                .</p>
+    <!--container--> 
+  </div>
+  <div class="page-title">
+    <h2>Advert Viewing</h2>
+  </div>
+</div>
+  <!-- BEGIN Main Container -->
+  <div class="main-container col1-layout wow bounceInUp an/imagested">
+    <div class="main">
+      <div class="col-main no-margin">
+        <!-- Endif Next Previous Product -->
+        <div class="product-view wow bounceInUp an/imagested" itemscope="" itemtype="http://schema.org/Product" itemid="#product_base">
+          <div id="messages_product_view"></div>
+          <!--product-next-prev-->
+          <div class="product-essential container">
+            <div class="row">
+              
+              <div id="product_addtocart_form">
+                <!--End For version 1, 2, 6 -->
+                <!-- For version 3 -->
+                <div class="product-img-box col-lg-6 col-sm-6 col-xs-12">
+                    <div class="new-label new-top-left"><%= @advert.category %></div>
+                    
+                    <div class="product-/imagesge">
+                      <div class="product-full"> <img id="product-zoom" src="<%= @advert./imagesge.url if @advert./imagesge && @advert./imagesge.url %>" data-zoom-/imagesge="<%= @advert./imagesge.url if @advert./imagesge && @advert./imagesge.url %>" alt="/imagesge principale"/> </div>
+                      <div class="more-views">
+                        <div class="slider-items-products">
+                          <div id="gallery_01" class="product-flexslider hidden-buttons product-img-thumb">
+                            <div class="slider-items slider-width-col4 block-content">
+                              <div class="more-views-items"> <a href="#" data-/imagesge="<%= @advert./imagesge2.url if @advert./imagesge2 && @advert./imagesge2.url %>" data-zoom-/imagesge="<%= @advert./imagesge2.url if @advert./imagesge2 && @advert./imagesge2.url %>"> <img id="product-zoom0"  src="<%= @advert./imagesge2.url if @advert./imagesge2 && @advert./imagesge2.url %>" alt="/imagesge2"/> </a></div>
+                              <div class="more-views-items"> <a href="#" data-/imagesge="<%= @advert./imagesge3.url if @advert./imagesge3 && @advert./imagesge3.url %>" data-zoom-/imagesge="<%= @advert./imagesge3.url if @advert./imagesge3 && @advert./imagesge3.url %>"> <img id="product-zoom1"  src="<%= @advert./imagesge3.url if @advert./imagesge3 && @advert./imagesge3.url %>" alt="/imagesge3"/> </a></div>
+                              <div class="more-views-items"> <a href="#" data-/imagesge="<%= @advert./imagesge4.url if @advert./imagesge4 && @advert./imagesge4.url %>" data-zoom-/imagesge="<%= @advert./imagesge4.url if @advert./imagesge4 && @advert./imagesge4.url %>"> <img id="product-zoom2"  src="<%= @advert./imagesge4.url if @advert./imagesge4 && @advert./imagesge4.url %>" alt="/imagesge4"/> </a></div>
                             </div>
-                  </li>
-                  <% end %>
-                <% end %>
-              </ul>
-            </div>
-            <!--widget-content--> 
-          </div>
-          <div id="categories-2" class="widget widget_categories wow bounceInUp animated animated" style="visibility: visible;">
-            <h2 class="widget-title">Categories</h2>
-            <div class="content">
-            <ul>
-	<li><a href="#">PhotoShop</a></li>
-	<li><a href="#">News</a></li>
-	<li><a href="#">Illustration</a></li>
-	<li><a href="#">Foods and Drinks</a></li>
-	<li><a href="#">Social</a></li>
-	<li><a href="#">Technology</a></li>
-	<li><a href="#">Uncategorized</a></li>
-	<li><a href="#">Videos</a></li>
-		</ul>
-            </div>
-          </div>
-          <!-- Banner Ad Block -->
-<div class="custom-slider">
-          <div>
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li class="active" data-target="#carousel-example-generic" data-slide-to="0"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="item active"><img src="/images/slide2.jpg" alt="slide3">
-                  <div class="carousel-caption">
-                  <h4>Fruit Shop</h4>
-                    <h3><a title=" Sample Product" href="product-detail.html">Up to 70% Off</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a class="link" href="#">Buy Now</a></div>
-                </div>
-                <div class="item"><img src="/images/slide3.jpg" alt="slide1">
-                  <div class="carousel-caption">
-                   <h4>Black Grapes</h4>
-                    <h3><a title=" Sample Product" href="product-detail.html">Mega Sale</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                     <a class="link" href="#">Buy Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end: more-/images --> 
                   </div>
-                </div>
-                <div class="item"><img src="/images/slide1.jpg" alt="slide2">
-                  <div class="carousel-caption">
-                  <h4>Food Farm</h4>
-                    <h3><a title=" Sample Product" href="product-detail.html">Up to 50% Off</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                     <a class="link" href="#">Buy Now</a>
+                <!--End For version 1,2,6-->
+                <!-- For version 3 -->
+                <div class="product-shop col-lg- col-sm-6 col-xs-12">
+                    <div class="product-next-prev"> <a class="product-next" href="#"><span></span></a> <a class="product-prev" href="#"><span></span></a> </div>
+                    <div class="brand"><%= @advert.user.name %></div>
+                    <div class="product-name">
+                      <h1><%= @advert.title %></h1>
+                    </div>
+                    <div class="">
+                      <div class="">
+                        <div style="width:60%" ></div>
+                      </div>
+                     
+                    </div>
+                    <div class="price-block">
+                      <div class="price-box">
+                      
+                        <p class="special-price"> <span class="price-label">Special Price</span> <span id="product-price-48" class="price"> <%= @advert.prix %> € </span> </p>
+                        
+                        
+                      </div>
+                    </div>
+                   
+                      
+                    </div>
+                    <div class="short-description">
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. </p>
+                    </div>
+                    
+                    
+                    <ul class="shipping-pro">
+                                    <li>Free Wordwide Shipping</li>
+                                    <li>30 Days Return</li>
+                                    <li>Member Discount</li>
+                                </ul>
                   </div>
+                <!--product-shop-->
+                <!--Detail page static block for version 3-->
+              </div>
+            </div>
+          </div>
+          <!--product-essential-->
+          <div class="product-collateral">
+          <div class="pro-tabs">
+          <div class="container">
+            <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
+              <li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Product Description </a> </li>
+              <li> <a href="#reviews_tabs" data-toggle="tab">Reviews</a> </li>
+            </ul>
+            </div>
+            </div>
+            <div class="container">
+            <div id="productTabContent" class="tab-content">
+              <div class="tab-pane fade in active" id="product_tabs_description">
+                <div class="std">
+                
+                  <p><%= @advert.description %></p>
+                  <ul>
+                  <li><strong>Mauris vel tellus non nunc mattis lobortis</strong></li>
+                  <li><strong>Suspendisse aliquet urna pretium eros convallis</strong></li>
+                  <li>Vestibulum ante ipsum <strong>primis in faucibus</strong></li>
+                  <li><strong>Fusce ultricies massa massa</strong></li>
+                  </ul>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Mauris vel tellus non nunc mattis lobortis. vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. </p>
                 </div>
               </div>
-              <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"> <span class="sr-only">Next</span> </a></div>
-          </div>
-        </div>
-          <!-- Banner Text Block -->
-          <div class="text-widget widget widget__sidebar">
-            <h2 class="widget-title">Custom Widget</h2>
-            <div class="widget-content">Mauris at blandit erat. Nam vel tortor non quam scelerisque cursus. Praesent nunc vitae magna pellentesque auctor. Quisque id lectus.<br>
-              <br>
-              Massa, eget eleifend tellus. Proin nec ante leo ssim nunc sit amet velit malesuada pharetra. Nulla neque sapien, sollicitudin non ornare quis, malesuada.</div>
-          </div>
-        </div>
-      </div>                           
-<div class="col-main col-sm-9 main-blog">
-  	<!--<div class="page-title"><h2></h2></div>-->
-<div id="main" class="blog-wrapper">
-    
-	<div id="primary" class="site-content">
-		<div id="content" role="main">
-                         <% @adverts.each do |advert| %>
-                 <% if advert.valide %>
-                      <article id="post-29" class="blog_entry clearfix wow bounceInUp animated animated" style="visibility: visible;">
-                      
-                        <div>
-                          <div class="featured-thumb"><%= image_tag(advert.image.url, class: "card-img-top w-25") if advert.image && advert.image.url  %></div>
-                          <header class="blog_entry-header clearfix">
-                          <div class="blog_entry-header-inner">
-                            <h2 class="blog_entry-title"> <%= advert.title %></h2>
-                            
-                          </div>
-                          <!--blog_entry-header-inner--> 
-                        </header>
-                          <div class="entry-content">
-                          <ul class="post-meta">
-                                  <li><i class="fa fa-user"></i>posted by <a href="#">admin</a> </li>
-                                  <li><i class="fa fa-comments"></i><a href="#">8 comments</a> </li>
-                                  <li><i class="fa fa-clock-o"></i><span class="day"><%= advert.updated_at %></span></li>
-                                </ul>
-                            <p>Fusce ac pharetra urna. Duis non lacus sit amet lacus interdum facilisis sed non est. Ut mi metus, semper eu dictum nec, condimentum sed sapien. Nullam lobortis nunc semper ipsum luctus ut viverra ante eleifend. Nunc pretium velit sed augue luctus accumsan. Integer vitae diam sed dolor euismod laoreet eget ac felis. Donec non erat sed elit bibendum sodales.</p>
-                          </div>
-                          <p> <%= link_to 'Read More', advert, class:"btn" %> </p>
-                        </div>
-                      </article>
-                  <% end %>
-                <% end %>
-                <div class="comment-content wow bounceInUp animated">
-                    <div class="comments-wrapper">
-                      <h3> Comments </h3>
-                      <ol class="commentlist">
+              
+              <div class="tab-pane fade in" id="reviews_tabs">
+                      <div class="woocommerce-Reviews">
+<div>
+<h2 class="woocommerce-Reviews-title">2 reviews </span></h2>
+<ol class="commentlist">
 <li class="comment">
 <div>
 <img alt="" src="/images/member1.png" class="avatar avatar-60 photo">
@@ -205,7 +140,7 @@
                     </div>
 <p class="meta">
 <strong>John Doe</strong> 
-<span>–</span> <time>April 19, 2018</time>
+<span>–</span> April 19, 2018
 </p>
 <div class="description"><p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ut libero malesuada feugiat. Proin eget tortor risus. Donec rutrum congue leo eget malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 <p>Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
@@ -224,7 +159,7 @@
                       
                     </div>
 <p class="meta">
-<strong>Stephen Smith</strong> <span>–</span> <time>June 02, 2018</time>
+<strong>Stephen Smith</strong> <span>–</span> June 02, 2018
 </p>
 <div class="description"><p>Donec rutrum congue leo eget malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 </div>
@@ -232,87 +167,107 @@
 </div>
 </li><!-- #comment-## -->
 </ol>
-                      <!--commentlist--> 
+</div>
+<div>
+<div>
+<div class="comment-respond">
+<span class="comment-reply-title">Add a review </span>			
+<form action="#" method="post" class="comment-form" novalidate>
+<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+
+<p class="comment-form-comment">
+<label>Your review <span class="required">*</span></label>
+<textarea id="comment" name="comment" cols="45" rows="8" required></textarea>
+</p>
+<p class="comment-form-author">
+<label for="author">Name <span class="required">*</span></label> 
+<input id="author" name="author" type="text" value="" size="30" required></p>
+<p class="comment-form-email">
+<label for="email">Email <span class="required">*</span></label> 
+<input id="email" name="email" type="email" value="" size="30"  required></p>
+<p class="form-submit">
+<input name="submit" type="submit" id="submit" class="submit" value="Submit"> 
+</p>
+</form>
+</div><!-- #respond -->
+</div>
+</div>
+<div class="clear"></div>
+</div>
                     </div>
-                    <!--comments-wrapper-->
-                    
-                    <div class="comments-form-wrapper clearfix">
-                      <h3>Leave A reply</h3>
-                      <form class="comment-form" method="post" id="postComment" action="">
-                        <div class="field">
-                          <label for="name">Name<em class="required">*</em></label>
-                          <input type="text" class="input-text" title="Name" value="" id="user" name="user_name">
-                        </div>
-                        <div class="field">
-                          <label for="email">Email<em class="required">*</em></label>
-                          <input type="text" class="input-text validate-email" title="Email" value="" id="email" name="user_email">
-                        </div>
-                        <div class="clear"></div>
-                        <div class="field aw-blog-comment-area">
-                          <label for="comment">Comment<em class="required">*</em></label>
-                          <textarea rows="5" cols="50" class="input-text" title="Comment" id="comment" name="comment"></textarea>
-                        </div>
-                        <div style="width:96%" class="button-set">
-                          <input type="hidden" value="1" name="blog_id">
-                          <button type="submit" class="bnt-comment"><span><span>Add Comment</span></span></button>
-                        </div>
-                      </form>
-                    </div>
-                    <!--comments-form-wrapper clearfix--> 
-                    
-                  </div>
-							
-		</div>
-	</div>
-
-</div> <!--#main wrapper grid_8-->
-
-        
-
-  </div> <!--col-main col-sm-9-->
-            </div>    
-	       </div><!--main-container-->
-
-        </div> <!--col2-layout-->
+            
+            </div>
+            </div>
+          </div>
      
-              
+      
+          <!--product-collateral-->
+          <div class="box-additional">
+            <!-- BEGIN RELATED PRODUCTS -->
+            <div class="related-pro container">
+              <div class="slider-items-products">
+                <div class="new_title center">
+                  <h2>Related Products</h2>
+                </div>
+                <div id="related-slider" class="product-flexslider hidden-buttons">
+                  <div class="slider-items slider-width-col4 products-grid">
+                   <% @adverts.each do |advert| %>
+                 <% if advert.valide %>
+                     
+                      
 
-
- <div class="our-features-box">
-     <div class="container">
-     <div class="row">
-      <ul>
-        <li>
-          <div class="feature-box">
-            <div class="icon-truck"></div>
-            <div class="content">Free shipping on order over $99</div>
+                      <div class="item">
+                            <div class="item-inner">
+                              <div class="item-img">
+                                <div class="item-img-info"><%= /imagesge_tag(advert./imagesge.url, class: "product-/imagesge") if advert./imagesge && advert./imagesge.url  %>
+                                  <div class="item-box-hover">
+                                    <div class="box-inner">
+                                      <div class="product-detail-bnt"><%= link_to 'View', advert, class:"button detail-bnt" %>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="add_cart">
+                                  <%= link_to 'View Advert', advert, class:"button btn-cart" %>
+                                       
+                                </div>
+                              </div>
+                              <div class="item-info">
+                                <div class="info-inner">
+                                  <div class="item-title"><%= advert.title %>  </div>
+                                  <div class="item-content">
+                                   
+                                    <div class="item-price">
+                                      <div class="price-box"><span class="regular-price"><span class="price"><%= advert.prix %></span> </span> </div>
+                                    </div>
+									
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                  <% end %>
+                <% end %>
+          
+          
+        </div>
+                </div>
+              </div>
+            </div>
+            <!-- end related product -->
+            
           </div>
-        </li>
-        <li>
-          <div class="feature-box">
-            <div class="icon-support"></div>
-            <div class="content">Have a question?<br>
-              +1 800 789 000</div>
-          </div>
-        </li>
-        <li>
-          <div class="feature-box">
-            <div class="icon-money"></div>
-            <div class="content">100% Money back guarantee</div>
-          </div>
-        </li>
-        <li>
-          <div class="feature-box">
-            <div class="icon-return"></div>
-            <div class="content">30 days return service</div>
-          </div>
-        </li>
-        
-      </ul>
+          <!-- end related product -->
+        </div>
+        <!--box-additional-->
+        <!--product-view-->
+      </div>
     </div>
-    </div>
+    <!--col-main-->
   </div>
-  <!-- For version 1,2,3,4,6 -->
-  
-  
-       
+  <!--main-container-->
+</div>
+<!--col1-layout-->
+
+<!-- For version 1,2,3,4,6 -->
+
