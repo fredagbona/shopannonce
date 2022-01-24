@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
   get 'newsletters/create'
   mount RailsAdmin::Engine => '/shopmyadmin', as: 'rails_admin'
-  resources :adverts
+  resources :adverts do
+    resources :comments
+  end
 
   get 'profile/index'
   devise_for :users

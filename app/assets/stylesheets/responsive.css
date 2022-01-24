@@ -447,7 +447,7 @@ footer address {
 .col-xs-12.right_menu {
 	padding-left: 4px;
 }
-.product-img-box.col-xs-12 {
+.product-img-box. col-xs-12 {
 width:300px;
 }
 .product-next-prev {
@@ -2790,7 +2790,7 @@ button.button.btn-proceed-checkout:before {
 
 .col2-set .col-2 .f-right {display:block}
 
-@media (min-width: 992px) and (max-width: 1169px) {
+ @media (min-width: 992px) and (max-width: 1169px) {
 	
 	
 
@@ -3244,11 +3244,11 @@ ol#compare-items li a.product-name {
 
 }
 
-@media (min-width: 1200px) {
+ @media (min-width: 1200px) {
 
 	 
 }
-@media (max-width: 767px) {
+ @media (max-width: 767px) {
 
 #header {
     position: relative;

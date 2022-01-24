@@ -125,7 +125,6 @@ a {
 a:hover {
 	color: #ed6663;
 	text-decoration: none;
-	background-color: transparent;
 }
 :hover {
 }
@@ -611,6 +610,10 @@ ul.currencies_list li a:hover {
 .block-company-wrapper .dropdown-menu a:hover {
 	color: #000;
 	background: none;
+}
+a:hover{
+	background: none !important;
+	text-decoration: none !important;
 }
 /* Top Shopping Cart */
 .mini-products-list .product-image {

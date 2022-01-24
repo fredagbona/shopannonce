@@ -1,7 +1,7 @@
-<p id="notice"> <%= notice %> </p>
+<p id="notice"><%= notice %></p>
 
 <div id="page">
-<div class="page-heading">
+  <div class="page-heading">
     <div class="breadcrumbs">
       <div class="container">
         <div class="row">
@@ -22,10 +22,10 @@
     </div>
   </div>
 
-<div class="main-container col1-layout wow bounceInUp animated">
-<div class="main">
-    <div class="col-main no-margin">
-     <div
+  <div class="main-container col1-layout wow bounceInUp animated">
+    <div class="main">
+      <div class="col-main no-margin">
+        <div
           class="product-view wow bounceInUp an/imagested"
           itemscope=""
           itemtype="http://schema.org/Product"
@@ -41,7 +41,7 @@
                     <%= @advert.category %>
                   </div>
 
-                  <div class="product-image">
+                  <div class="product-/image">
                     <div class="product-full">
                       <img
                         id="product-zoom"
@@ -150,9 +150,7 @@
           </div>
         </div>
 
-
-
-<div class="product-collateral">
+        <div class="product-collateral">
           <div class="pro-tabs">
             <div class="container">
               <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
@@ -211,44 +209,141 @@
                   <div>
                     <h2 class="woocommerce-Reviews-title">2 reviews</h2>
                     <ol class="commentlist">
-                      <% @comments.each do |comment| %>
-                        <% if comment.id.present? %>
-                                <li class="comment">
-                                  <div>
-                                    
-                                    <div class="comment-text">
-                                      <div class="ratings">
-                                        <div class="rating-box">
-                                          <div style="width: 100%" class="rating"></div>
-                                        </div>
-                                      </div>
-                                      <p class="meta">
-                                        <strong><%= comment.name %></strong>
-                                        <span></span> <%= comment.created_at %>
-                                      </p>
-                                      <div class="description">
-                                        <p>
-                                          <%= comment.content %>
-                                        </p>
-                                        <p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </li>
-                       <% end %>
-                      <% end %>
-                      
+                      <li class="comment">
+                        <div>
+                          <img
+                            alt=""
+                            src="/images/member1.png"
+                            class="avatar avatar-60 photo"
+                          />
+                          <div class="comment-text">
+                            <div class="ratings">
+                              <div class="rating-box">
+                                <div style="width: 100%" class="rating"></div>
+                              </div>
+                            </div>
+                            <p class="meta">
+                              <strong>John Doe</strong>
+                              <span>–</span> April 19, 2018
+                            </p>
+                            <div class="description">
+                              <p>
+                                Vivamus magna justo, lacinia eget consectetur
+                                sed, convallis at tellus. Nulla quis lorem ut
+                                libero malesuada feugiat. Proin eget tortor
+                                risus. Donec rutrum congue leo eget malesuada.
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                              </p>
+                              <p>
+                                Donec sollicitudin molestie malesuada. Vivamus
+                                suscipit tortor eget felis porttitor volutpat.
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Nulla quis lorem ut libero
+                                malesuada feugiat. Vivamus magna justo, lacinia
+                                eget consectetur sed, convallis at tellus.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="comment">
+                        <div>
+                          <img
+                            alt=""
+                            src="/images/member2.png"
+                            class="avatar avatar-60 photo"
+                          />
+                          <div class="comment-text">
+                            <div class="ratings">
+                              <div class="rating-box">
+                                <div style="width: 100%" class="rating"></div>
+                              </div>
+                            </div>
+                            <p class="meta">
+                              <strong>Stephen Smith</strong> <span>–</span> June
+                              02, 2018
+                            </p>
+                            <div class="description">
+                              <p>
+                                Donec rutrum congue leo eget malesuada. Lorem
+                                ipsum dolor sit amet, consectetur adipiscing
+                                elit.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
                     </ol>
                   </div>
                   <div>
                     <div>
-                      <div id="comments_area">
-    
-                           <%= render partial: 'comments/index', locals: { comments: @comments, advert: @advert } %>
+                      <div class="comment-respond">
+                        <span class="comment-reply-title">Add a review </span>
+                        <form
+                          action="#"
+                          method="post"
+                          class="comment-form"
+                          novalidate
+                        >
+                          <p class="comment-notes">
+                            <span id="email-notes"
+                              >Your email address will not be published.</span
+                            >
+                            Required fields are marked
+                            <span class="required">*</span>
+                          </p>
+
+                          <p class="comment-form-comment">
+                            <label
+                              >Your review
+                              <span class="required">*</span></label
+                            >
+                            <textarea
+                              id="comment"
+                              name="comment"
+                              cols="45"
+                              rows="8"
+                              required
+                            ></textarea>
+                          </p>
+                          <p class="comment-form-author">
+                            <label for="author"
+                              >Name <span class="required">*</span></label
+                            >
+                            <input
+                              id="author"
+                              name="author"
+                              type="text"
+                              value=""
+                              size="30"
+                              required
+                            />
+                          </p>
+                          <p class="comment-form-email">
+                            <label for="email"
+                              >Email <span class="required">*</span></label
+                            >
+                            <input
+                              id="email"
+                              name="email"
+                              type="email"
+                              value=""
+                              size="30"
+                              required
+                            />
+                          </p>
+                          <p class="form-submit">
+                            <input
+                              name="submit"
+                              type="submit"
+                              id="submit"
+                              class="submit"
+                              value="Submit"
+                            />
+                          </p>
+                        </form>
                       </div>
-  
-                          <%= render partial: 'comments/form', locals: { comment: @comment, advert: @advert } %>
-                          
                     </div>
                   </div>
                   <div class="clear"></div>
@@ -257,7 +352,60 @@
             </div>
           </div>
         </div>
+
+        <div class="box-additional">
+          <div class="related-pro container">
+            <div class="slider-items-products">
+              <div class="new_title center">
+                <h2>Related Products</h2>
+              </div>
+              <div id="related-slider" class="product-flexslider hidden-buttons">
+                <div class="slider-items slider-width-col4 products-grid">
+                   <% @adverts.each do |advert| %> 
+                       <% if advert.valide %>
+                      <div class="item">
+                           <div class="item-inner">
+                               <div class="item-img">
+                                     <div class="item-img-info">
+                                 <%= image_tag(advert.image.url, class:"product-image") if advert.image && advert.image.url %>
+                                       <div class="item-box-hover">
+                                         <div class="box-inner">
+                                           <div class="product-detail-bnt">
+                                             <%= link_to 'View', advert, class:"button detail-bnt" %>
+                                           </div>
+                                         </div>
+                                       </div>
+                                       <div class="add_cart">
+                                         <%= link_to 'View Advert', advert, class:"button btn-cart" %>
+                                       </div>
+                                     </div>
+                                     <div class="item-info">
+                                       <div class="info-inner">
+                                         <div class="item-title"><%= advert.title %></div>
+                                         <div class="item-content">
+                                           <div class="item-price">
+                                             <div class="price-box">
+                                               <span class="regular-price">
+                                              <span class="price"><%= advert.prix %></span>
+                                               </span>
+                                             </div>
+                                           </div>
+                                         </div>
+                                       </div>
+                                 </div>
+                            </div>
+                          </div>    
+                       </div>
+                    <% end %>
+                 <% end %>
+               </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-
- </div>
+</div>

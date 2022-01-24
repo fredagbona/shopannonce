@@ -24,4 +24,5 @@ class Advert < ApplicationRecord
         'Arts & Collection': 9,
         Animaux: 10
     }
+    has_many :comments, dependent: :destroy
 end
